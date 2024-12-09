@@ -1,3 +1,13 @@
+Dynamic Sports Store - Front-End
+
+Home page with the available products to select
+Cart page for the user to finish the purchase
+Loggin popup for internal users
+Page for the area for internal users
+In this area, there will be a functionality to create multiple rows in database. It is a way to have more automation and make it to create data that will be used later in Power BI and Dashboards
+
+==================================
+
 # Dynamic
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
