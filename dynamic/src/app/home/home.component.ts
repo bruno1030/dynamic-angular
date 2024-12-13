@@ -14,11 +14,7 @@ import { ProductCardComponent } from '../components/product-card/product-card.co
 })
 export class HomeComponent implements OnInit {
 
-  products = [
-    { id: 1, title: 'Soccer Ball', value: 29.99, imageUrl: 'assets/images/soccer-ball.jpg' },
-    { id: 2, title: 'Basketball', value: 19.99, imageUrl: 'assets/images/basketball.jpg' },
-    { id: 3, title: 'Tennis Racket', value: 49.99, imageUrl: 'assets/images/tennis-racket.jpg' },
-  ];
+  products: any[] = [];
   
   constructor(private router: Router, private productService: ProductService) {}
 

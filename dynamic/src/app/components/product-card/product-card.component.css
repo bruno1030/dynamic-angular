@@ -1,0 +1,23 @@
+.card{
+    width: 220px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card img{
+    width: 125px;
+    height: 125px;
+    border: 1px solid;
+}
+
+.product-card h2{
+    border: 1px solid;
+}
+
+.card:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+}
