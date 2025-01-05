@@ -19,8 +19,15 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private productService: ProductService) {}
 
   ngOnInit(): void {
-    // Initialize products from service
-    this.products = this.productService.getMockedProducts();
+
+    this.productService.getProducts().subscribe({
+      next: (data) => {
+        this.products = data; // // Assign the returned array to 'products'
+      },
+      error: (err) => {
+        console.error('Error on retrieving products:', err);
+      }
+    });
   }
   
   navigateToCart(): void {
