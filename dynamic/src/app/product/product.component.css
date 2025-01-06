@@ -5,4 +5,19 @@
 }
 
 .product-page h1{
+    
+}
+
+.product-page{
+    padding: 20px;
+}
+
+button{
+    margin: 20px;
+    width: 80px;
+    height: 60px;
+}
+
+p{
+    font-size: 20px;
 }
