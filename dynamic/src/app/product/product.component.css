@@ -1,14 +1,19 @@
-.product-page img{
+.product-page{
+    display: flex; /* Use Flexbox */
+    justify-content: center;
+    background-color: #f4f4f4;
+    height: 500px;
+    align-items: center;
+    text-align: center; /* Center text */
+}
+
+.product-page-top img{
     width: 300px;
     height: 300px;
     border: 1px solid;
 }
 
-.product-page h1{
-    
-}
-
-.product-page{
+.product-page-top{
     padding: 20px;
 }
 
