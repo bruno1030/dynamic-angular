@@ -1,12 +1,14 @@
-<h1>Dynamic Sports Store</h1>
-<h2>Home</h2>
+<div class="home">
+    <h1>Dynamic Sports Store</h1>
+    <h2>Home</h2>
 
-<div class="product-list">
-    <app-product-card
-        *ngFor="let product of products"
-        [product]="product"
-        (productClicked)="openProductPage($event)">
-    </app-product-card>
+    <div class="product-list">
+        <app-product-card
+            *ngFor="let product of products"
+            [product]="product"
+            (productClicked)="openProductPage($event)">
+        </app-product-card>
+    </div>
+
+    <button (click)="navigateToCart()">Go to Cart</button>
 </div>
-
-<button (click)="navigateToCart()">Go to Cart</button>
