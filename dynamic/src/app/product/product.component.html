@@ -1,5 +1,5 @@
 <div class="product-page">
-    <div *ngIf="product" class="product-page-top">
+    <div *ngIf="product">
         <h1>{{ product.title }}</h1>
         <img [src]="product.imageUrl" alt="{{ product.title }}">
         <p>Price: {{ product.value }}</p>
@@ -8,9 +8,15 @@
     <div *ngIf="!product">
         <p>No product data available.</p>
     </div>
+
+    <div class="input-quantity">
+        <label for="">Quantity</label>
+        <input type="text" name="" id="">
+    </div>
     
-    <button (click)="navigateToHome()">Home</button>
-    
-    <button (click)="navigateToCart()">Cart</button>
+    <div class="buttons-container">
+        <button (click)="navigateToHome()">Home</button>
+        <button (click)="navigateToCart()">Cart</button>
+    </div>  
 </div>
 
