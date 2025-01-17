@@ -10,13 +10,14 @@
     </div>
 
     <div class="input-quantity">
-        <label for="">Quantity</label>
-        <input type="text" name="" id="">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" ngModel="quantity" placeholder="Enter quantity">
     </div>
     
     <div class="buttons-container">
         <button (click)="navigateToHome()">Home</button>
         <button (click)="navigateToCart()">Cart</button>
+        <button (click)="addToCart()">Add</button>
     </div>  
 </div>
 

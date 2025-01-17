@@ -1,10 +1,8 @@
 .product-page{
     /* display: flex;  */
-    justify-content: center;
     background-color: #f4f4f4;
+    width: 600px;
     height: 500px;
-    align-items: center;
-    text-align: center;
 }
 
 .product-page-top img{
@@ -13,12 +11,11 @@
     border: 1px solid;
 }
 
-.product-page-top{
-    padding: 20px;
+.input-quantity{
+    width: 300px;
 }
 
 button{
-    margin: 20px;
     width: 80px;
     height: 60px;
 }
@@ -26,9 +23,7 @@ button{
 .buttons-container{
     display: flex;
     justify-content: space-evenly; /* Espaça os botões uniformemente */
-    gap: 20px;
     padding: 20px;
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%; /* Faz com que os botões ocupem toda a largura da tela */
@@ -38,12 +33,4 @@ button{
 
 p{
     font-size: 20px;
-}
-
-.input-quantity{
-    display: flex;
-    margin: 50px;
-    width: 50px;
-    height: 50px;
-    background-color: aquamarine;
 }

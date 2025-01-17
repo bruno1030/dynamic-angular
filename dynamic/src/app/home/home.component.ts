@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../services/product/product.service';
 import { CommonModule } from '@angular/common'; // Required for *ngFor and other Angular features
 import { RouterModule } from '@angular/router';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
