@@ -16,7 +16,7 @@ export class ProductComponent {
 
   quantity: number = 1;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private cartService: CartService) {
     // Access the passed state
     this.product = history.state.product || null;
   }
@@ -34,6 +34,8 @@ export class ProductComponent {
       alert("Please select a valid quantity");
       return;
     }
+
+    this.cartService.addToCart(this.product, this.quantity);
 
   }
 
