@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,8 +9,19 @@ import { Router } from '@angular/router';
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-  constructor(private router: Router){
 
+  cart: any[] = [];
+
+  constructor(private router: Router, private cartService: CartService){
+    this.cart = this.cartService.getCart();  // Load cart data
+  }
+
+  removeItem(productId: number){
+    this.cartService.removeFromCart(productId);
+  }
+
+  clearCart(){
+    this.cartService.clearCart();
   }
 
   navigateToHome(){
