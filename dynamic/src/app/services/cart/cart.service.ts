@@ -31,7 +31,16 @@ export class CartService {
       // add a new item to the cart
       this.cart.push({ product, quantity });
     }
+  }
 
+  // Remove item from cart
+  removeFromCart(productId: number) {
+    this.cart = this.cart.filter(item => item.product.id !== productId);
+  }
+
+  // Clear the cart
+  clearCart() {
+    this.cart = [];
   }
 
 }
