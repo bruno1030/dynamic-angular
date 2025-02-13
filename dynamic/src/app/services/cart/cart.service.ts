@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   private cart: any[] = []; // array to store cart items
 
@@ -30,6 +31,14 @@ export class CartService {
     } else {
       // add a new item to the cart
       this.cart.push({ product, quantity });
+
+      // Show notification in the Product Page saying that the product was added to the cart
+      this.snackBar.open(`${product.name} added to cart!`, '', {
+        duration: 3000, // Auto-close after 3 seconds
+        panelClass: ['success-snackbar'], // Custom styling (optional)
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
     }
   }
 
