@@ -33,7 +33,7 @@ export class CartService {
       this.cart.push({ product, quantity });
 
       // Show notification in the Product Page saying that the product was added to the cart
-      this.snackBar.open(`${product.name} added to cart!`, '', {
+      this.snackBar.open(`${product.title} added to cart!`, '', {
         duration: 3000, // Auto-close after 3 seconds
         panelClass: ['success-snackbar'], // Custom styling (optional)
         horizontalPosition: 'center',
