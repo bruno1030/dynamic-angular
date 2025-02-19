@@ -1,19 +1,19 @@
-<h1>Dynamic Sports Store</h1>
-<h2>Cart</h2>
+<h1 class="store-title">Dynamic Sports Store</h1>
+<h2 class="cart-title">Your Cart</h2>
+
 <div class="cart-page">
-    <h1>Cart</h1>
     <div *ngIf="cart.length > 0; else emptyCart">
-        <div *ngFor="let item of cart">
+        <div *ngFor="let item of cart" class="cart-item">
             <h3>{{ item.product.title }}</h3>
             <p>Quantity: {{ item.quantity }}</p>
             <p>Price: {{ item.product.value }}</p>
             <p>Total: {{ item.product.value * item.quantity }}</p>
-            <button (click)="removeItem(item.product.id)">Remove</button>
+            <button class="remove-btn" (click)="removeItem(item.product.id)">Remove</button>
         </div>
-        <button (click)="clearCart()">Clear Cart</button>
+        <button class="clear-btn" (click)="clearCart()">Clear Cart</button>
     </div>
     <ng-template #emptyCart>
         <p>Your cart is empty.</p>
     </ng-template>
 </div>
-<button (click)="navigateToHome()">Go to Home page</button>
+<button class="home-btn" (click)="navigateToHome()">Go to Home page</button>
