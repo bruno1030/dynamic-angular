@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,8 @@ export class CartService {
 
   constructor(private snackBar: MatSnackBar) { }
 
-  private cart: any[] = []; // array to store cart items
+  private cart = new BehaviorSubject<any[]>([]); // array to store cart items
+  cart$ = this.cart.asObservable(); // Observable to listen the changes in the cart
 
   // get cart items
   getCart(){
@@ -17,12 +19,13 @@ export class CartService {
 
   // add item to cart
   addToCart(product: any, quantity: number){
+    const currentCart = this.cart.value;
     // verify if the item is already in the cart
-    const itemExists = this.cart.some(item => item.product.id === product.id);
+    const itemExists = currentCart.some(item => item.product.id === product.id);
     
     if (itemExists) {
       // update the quantity of an existing item
-      for (let item of this.cart) {
+      for (let item of currentCart) {
         if (item.product.id === product.id) {
           item.quantity += quantity;
           break; // stop the loop, since the item was already found
@@ -30,7 +33,7 @@ export class CartService {
       }
     } else {
       // add a new item to the cart
-      this.cart.push({ product, quantity });
+      currentCart.push({ product, quantity });
 
       // Show notification in the Product Page saying that the product was added to the cart
       this.snackBar.open(`${product.title} added to cart!`, '', {
@@ -44,12 +47,13 @@ export class CartService {
 
   // Remove item from cart
   removeFromCart(productId: number) {
-    this.cart = this.cart.filter(item => item.product.id !== productId);
+    const currentCart = this.cart.value.filter(item => item.product.id !== productId);
+    this.cart.next(currentCart);
   }
 
   // Clear the cart
   clearCart() {
-    this.cart = [];
+    this.cart.next([]); // empties the cart and notifies the components
   }
 
 }
