@@ -34,3 +34,10 @@ button{
 p{
     font-size: 20px;
 }
+
+.product-image{
+    max-width: 300px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px 0; /* Add some spacing */
+}
