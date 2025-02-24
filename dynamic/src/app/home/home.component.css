@@ -2,4 +2,13 @@
     padding: 20px;
 }
 
-
+.home-btn {
+    background: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
