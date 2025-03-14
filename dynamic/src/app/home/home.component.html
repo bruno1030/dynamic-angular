@@ -2,6 +2,8 @@
     <h1>Dynamic Sports Store</h1>
     <h2>Home</h2>
 
+    <button class="login-btn" (click)="navigateToLogin()">Login</button>
+
     <div class="product-list">
         <app-product-card
             *ngFor="let product of products"

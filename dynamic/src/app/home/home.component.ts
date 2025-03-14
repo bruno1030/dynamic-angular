@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/cart']);
   }
 
+  navigateToLogin(): void{
+    this.router.navigate(['/login']);
+  }
+
   openProductPage(product: any): void {
     console.log('Opening product page for:', product.title);
     this.router.navigate(['/product', product.id], {
