@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   constructor() { }
+
+  validateLogin(username: string, password: string){
+
+    return false;
+  }
 }
