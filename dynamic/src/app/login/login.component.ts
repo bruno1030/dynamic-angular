@@ -24,7 +24,7 @@ export class LoginComponent {
 
     var loginIsValid = this.loginService.validateLogin(this.username, this.password);
 
-    if (this.username === 'admin' && this.password === 'password123') {
+    if (loginIsValid) {
       this.errorMessage = '';
       alert('Login successful!');
     } else {
