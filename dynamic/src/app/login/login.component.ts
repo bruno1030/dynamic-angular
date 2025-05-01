@@ -20,16 +20,24 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
+  loginIsValid: boolean = false;
+
   onLogin() {
+    this.loginService.validateLogin(this.username, this.password).subscribe(
+      (result: boolean) => {
+        this.loginIsValid = result;
 
-    var loginIsValid = this.loginService.validateLogin(this.username, this.password);
-
-    if (loginIsValid) {
-      this.errorMessage = '';
-      alert('Login successful!');
-    } else {
-      this.errorMessage = 'Invalid username or password!';
-    }
+        if (this.loginIsValid) {
+          this.errorMessage = '';
+          alert('Login successful!');
+        } else {
+          this.errorMessage = 'Invalid username or password!';
+        }
+      },
+      (error) => {
+        this.errorMessage = 'An error occurred during login.';
+      }
+    );
   }
 
 }
