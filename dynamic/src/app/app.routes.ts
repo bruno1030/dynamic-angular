@@ -20,5 +20,9 @@ export const routes: Routes = [
   {
     path: 'login', // Login page ('login')
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule) 
+  }, 
+  {
+    path: 'dashboard', // Logged page - dashboard ('dashboard')
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) 
   },
 ];
