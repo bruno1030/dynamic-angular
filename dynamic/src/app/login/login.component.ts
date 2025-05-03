@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../services/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { LoginService } from '../services/login/login.service';
 })
 export class LoginComponent {
 
-  constructor(private loginService: LoginService){
+  constructor(private loginService: LoginService, private router: Router){
 
   }
 
@@ -29,7 +30,7 @@ export class LoginComponent {
 
         if (this.loginIsValid) {
           this.errorMessage = '';
-          alert('Login successful!');
+          this.router.navigate(['/dashboard']); // Redirect
         } else {
           this.errorMessage = 'Invalid username or password!';
         }
