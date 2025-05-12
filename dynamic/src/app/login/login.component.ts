@@ -30,7 +30,7 @@ export class LoginComponent {
 
         if (this.loginIsValid) {
           this.errorMessage = '';
-          this.router.navigate(['/dashboard']); // Redirect
+          this.router.navigate(['/dashboard'], { queryParams: { username: this.username } }); // Redirect
         } else {
           this.errorMessage = 'Invalid username or password!';
         }

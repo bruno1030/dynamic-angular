@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { DashboardService } from '../services/dashboard/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +13,19 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  constructor(private router: Router){
-    
+  userData: any;
+
+  constructor(private route: ActivatedRoute, private router: Router, private dashboardService: DashboardService){
+    const username = this.router.getCurrentNavigation()?.extras.state?.['username'];
+
+    if (username) {
+      this.dashboardService.getUserInfo(username).subscribe({
+        next: (data) => this.userData = data,
+        error: (err) => console.error('Failed to fetch user info', err)
+      });
+    } else {
+      console.error('No username provided');
+    }
   }
 
   navigateToHome(){
